@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+type ByteSize int
+
 const (
     first = iota // iota default == 0
     second
@@ -9,6 +11,16 @@ const (
     fourth
     fifth
     sixth
+)
+
+const (
+    _ = iota
+    KB ByteSize = 1 << (10 * iota)
+    MB
+    GB
+    TB
+    PB
+    EB
 )
 
 func main() {
@@ -29,4 +41,12 @@ func main() {
     fmt.Printf("%d \t %b \n", 1<<fourth, 1<<fourth)
     fmt.Printf("%d \t %b \n", 1<<fifth, 1<<fifth)
     fmt.Printf("%d \t %b \n", 1<<sixth, 1<<sixth)
+
+    //Show the sizes of each measurement of bytes in DECIMAL and BINARY
+    fmt.Printf("%d \t %b \n", KB, KB)
+    fmt.Printf("%d \t %b \n", MB, MB)
+    fmt.Printf("%d \t %b \n", GB, GB)
+    fmt.Printf("%d \t %b \n", TB, TB)
+    fmt.Printf("%d \t %b \n", PB, PB)
+    fmt.Printf("%d \t %b \n", EB, EB)
 }
