@@ -14,5 +14,8 @@ func main() {
 const englishHelloPrefix = "Hello, "
 
 func Hello(name string) string {
+    if name == "" {
+        name = "World"
+    }
     return fmt.Sprintf("%v%v", englishHelloPrefix, name)
 }
