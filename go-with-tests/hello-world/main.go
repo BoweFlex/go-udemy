@@ -3,7 +3,6 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println(Hello("Chris"))
 }
 
 //func Hello() string {
@@ -11,11 +10,22 @@ func main() {
 //}
 //
 
-const englishHelloPrefix = "Hello, "
-
-func Hello(name string) string {
+func Hello(name string, language string) string {
+    languages := map[string]string {
+        "English": "Hello, ",
+        "Spanish": "Hola, ",
+    }
+    var greeting string
     if name == "" {
         name = "World"
     }
-    return fmt.Sprintf("%v%v", englishHelloPrefix, name)
+    for k, v := range languages {
+        if k == language {
+            greeting = v
+        }
+    }
+    if greeting == "" {
+        greeting = languages["English"]
+    }
+    return fmt.Sprintf("%v%v", greeting, name)
 }
