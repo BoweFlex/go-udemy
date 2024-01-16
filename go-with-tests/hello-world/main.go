@@ -10,6 +10,9 @@ func main() {
 //    return "Hello, world!"
 //}
 //
+
+const englishHelloPrefix = "Hello, "
+
 func Hello(name string) string {
-    return fmt.Sprintf("Hello, %v", name)
+    return fmt.Sprintf("%v%v", englishHelloPrefix, name)
 }
