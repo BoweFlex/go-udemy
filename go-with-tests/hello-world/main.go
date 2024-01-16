@@ -14,6 +14,7 @@ func Hello(name string, language string) string {
     languages := map[string]string {
         "English": "Hello, ",
         "Spanish": "Hola, ",
+        "French": "Bonjour, ",
     }
     var greeting string
     if name == "" {
